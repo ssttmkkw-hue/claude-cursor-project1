@@ -69,6 +69,16 @@ export const ASSETS: AssetEntry[] = [
   { key: 'ui_slot', type: 'svg', url: 'assets/ui/slot_frame.svg', width: 48, height: 48 },
 
   // ===== FEAT-02 音频 =====
+  { key: 'bgm_village', type: 'audio', url: 'assets/audio/bgm/village.wav' },
+  { key: 'bgm_forest', type: 'audio', url: 'assets/audio/bgm/forest.wav' },
+  { key: 'bgm_lake', type: 'audio', url: 'assets/audio/bgm/lake.wav' },
+  { key: 'bgm_beach', type: 'audio', url: 'assets/audio/bgm/beach.wav' },
+  { key: 'sfx_slash', type: 'audio', url: 'assets/audio/sfx/slash.wav' },
+  { key: 'sfx_cast', type: 'audio', url: 'assets/audio/sfx/cast.wav' },
+  { key: 'sfx_pickup', type: 'audio', url: 'assets/audio/sfx/pickup.wav' },
+  { key: 'sfx_levelup', type: 'audio', url: 'assets/audio/sfx/levelup.wav' },
+  { key: 'sfx_ui', type: 'audio', url: 'assets/audio/sfx/ui.wav' },
+  { key: 'sfx_kill', type: 'audio', url: 'assets/audio/sfx/kill.wav' },
 
   // ===== FEAT-04 标题画面 =====
 

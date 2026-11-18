@@ -4,6 +4,7 @@ import { EventBus, GameEvents, type PlayerStatsPayload } from '@/core/EventBus';
 import { Skills } from '@/data/registry';
 import { GameState, expToNext } from '@/core/GameState';
 import { Skin, uiText } from '@/ui/skin';
+import { attachAudioManager } from '@/systems/AudioManager';
 
 /**
  * HUD 场景，叠在 WorldScene 上方，切图时不重启。只通过 EventBus 收数据。
@@ -39,6 +40,7 @@ export class UIScene extends Phaser.Scene {
   create() {
     const { width, height } = this.scale;
     void document.fonts?.load?.('16px "ZCOOL KuaiLe"').catch(() => undefined);
+    attachAudioManager(this);
 
     this.hudPanel = this.add.graphics();
     this.hudPanel.fillStyle(Skin.panel, 0.82);

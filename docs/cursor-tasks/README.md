@@ -25,7 +25,7 @@
 | [ART-07](ART-07-skill-fx-icons.md) | 技能特效 + 技能图标 | 美术 | — | 已完成 |
 | [ART-08](ART-08-ui-skin.md) | HUD / 对话框 / 字体 皮肤 | 美术+UI | — | 已完成 |
 | [FEAT-01](FEAT-01-skill-menu.md) | 技能装备菜单 | 功能 | — | 已完成 |
-| [FEAT-02](FEAT-02-audio.md) | 音频系统（BGM/音效） | 功能 | — | 待领取 |
+| [FEAT-02](FEAT-02-audio.md) | 音频系统（BGM/音效） | 功能 | — | 已完成 |
 | [FEAT-03](FEAT-03-gamepad.md) | 手柄支持 | 功能 | — | 待领取 |
 | [FEAT-04](FEAT-04-title-screen.md) | 标题画面 / 新游戏 / 继续 | 功能 | — | 已完成 |
 | [CONTENT-01](CONTENT-01-beach-map.md) | 海边地图 `beach` | 内容 | ART-01 建议先做 | 已完成 |

@@ -34,3 +34,8 @@
 - 做了什么：敌人 `bee`/`golem`/`flower` + 技能 `fireball`/`whirlwind`/`triple_slash`（及对应敌人技能）；SVG 美术与占位；湖畔放石头人/花妖与火球·旋风宝珠，海边放嗡嗡蜂与三连斩宝珠。
 - 遗留：无。
 - 请求 Claude：无
+
+## FEAT-02 · 音频
+- 做了什么：`AudioManager`（听 EventBus）；自制 CC0 WAV（`tools/gen-audio.mjs` + CREDITS）；四图 BGM + 6 音效；UI 场景挂载；音量存 localStorage。
+- 遗留：受击音需 `COMBATANT_HIT` 事件。
+- 请求 Claude：在 `GameEvents` 增加 `COMBATANT_HIT`，于 `Combatant.takeDamage` emit，便于补受击音效。
