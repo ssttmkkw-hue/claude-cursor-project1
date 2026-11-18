@@ -19,3 +19,8 @@
 - 做了什么：`TitleScene`（新游戏/继续/设置占位）；Boot 改为进入 Title；无存档时「继续」置灰；背景用草地瓦片+房子微动。
 - 遗留：设置项仅为占位。
 - 请求 Claude：无
+
+## CONTENT-02 · 湖畔地图
+- 做了什么：`src/data/maps/lake.json`（64×44，中央湖+环湖路+木桥小岛，`heal` 宝珠）；`tools/gen-lake.mjs`；tint `#e0f0ff`；与森林双向连通。
+- 遗留：无。
+- 请求 Claude：无
