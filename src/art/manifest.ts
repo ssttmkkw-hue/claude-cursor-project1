@@ -73,4 +73,13 @@ export const ASSETS: AssetEntry[] = [
   // ===== FEAT-04 标题画面 =====
 
   // ===== CONTENT-* 新内容用到的资源 =====
+  { key: 'enemy_bee', type: 'svg', url: 'assets/enemies/bee.svg', width: 28, height: 28 },
+  { key: 'enemy_golem', type: 'svg', url: 'assets/enemies/golem.svg', width: 40, height: 44 },
+  { key: 'enemy_flower', type: 'svg', url: 'assets/enemies/flower.svg', width: 32, height: 40 },
+  { key: 'fx_fireball', type: 'svg', url: 'assets/fx/fireball.svg', width: 24, height: 24 },
+  { key: 'fx_whirlwind', type: 'svg', url: 'assets/fx/whirlwind.svg', width: 64, height: 64 },
+  { key: 'fx_triple_slash', type: 'svg', url: 'assets/fx/triple_slash.svg', width: 64, height: 64 },
+  { key: 'icon_fireball', type: 'svg', url: 'assets/ui/icon_fireball.svg', width: 32, height: 32 },
+  { key: 'icon_whirlwind', type: 'svg', url: 'assets/ui/icon_whirlwind.svg', width: 32, height: 32 },
+  { key: 'icon_triple_slash', type: 'svg', url: 'assets/ui/icon_triple_slash.svg', width: 32, height: 32 },
 ];

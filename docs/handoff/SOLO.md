@@ -29,3 +29,8 @@
 - 做了什么：`src/data/maps/beach.json`（60×36，北入口/沙滩/大海）；渔夫 NPC；东出口预留 `cave`；`tools/gen-beach.mjs`；与村庄双向连通。
 - 遗留：可选贝壳/棕榈未做；洞穴未开放。
 - 请求 Claude：无
+
+## CONTENT-03 · 新敌人与技能
+- 做了什么：敌人 `bee`/`golem`/`flower` + 技能 `fireball`/`whirlwind`/`triple_slash`（及对应敌人技能）；SVG 美术与占位；湖畔放石头人/花妖与火球·旋风宝珠，海边放嗡嗡蜂与三连斩宝珠。
+- 遗留：无。
+- 请求 Claude：无

@@ -80,6 +80,26 @@
       "type": "slime",
       "x": 36,
       "y": 5
+    },
+    {
+      "type": "bee",
+      "x": 14,
+      "y": 18
+    },
+    {
+      "type": "bee",
+      "x": 42,
+      "y": 18
+    },
+    {
+      "type": "bee",
+      "x": 24,
+      "y": 5
+    },
+    {
+      "type": "flower",
+      "x": 52,
+      "y": 10
     }
   ],
   "pickups": [
@@ -88,6 +108,12 @@
       "x": 48,
       "y": 19,
       "skill": "wind_blade"
+    },
+    {
+      "id": "beach_triple_orb",
+      "x": 18,
+      "y": 19,
+      "skill": "triple_slash"
     }
   ],
   "ground": [

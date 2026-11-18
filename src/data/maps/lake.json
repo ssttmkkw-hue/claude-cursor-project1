@@ -69,6 +69,21 @@
       "type": "slime",
       "x": 26,
       "y": 9
+    },
+    {
+      "type": "golem",
+      "x": 18,
+      "y": 33
+    },
+    {
+      "type": "flower",
+      "x": 48,
+      "y": 9
+    },
+    {
+      "type": "golem",
+      "x": 46,
+      "y": 33
     }
   ],
   "pickups": [
@@ -77,6 +92,18 @@
       "x": 32,
       "y": 18,
       "skill": "heal"
+    },
+    {
+      "id": "lake_fire_orb",
+      "x": 11,
+      "y": 9,
+      "skill": "fireball"
+    },
+    {
+      "id": "lake_whirl_orb",
+      "x": 52,
+      "y": 9,
+      "skill": "whirlwind"
     }
   ],
   "ground": [

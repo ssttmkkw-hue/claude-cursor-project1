@@ -97,6 +97,20 @@ export const PLACEHOLDERS: Record<string, Placeholder> = {
     g.fillStyle(0xfff0dc).fillRoundedRect(10, 16, 12, 18, 4); g.fillStyle(0xc58be8).fillEllipse(16, 13, 30, 20);
     g.fillStyle(0xffffff).fillCircle(9, 10, 3).fillCircle(21, 7, 2).fillCircle(23, 15, 2); g.fillStyle(C.outline).fillCircle(13, 25, 1.5).fillCircle(19, 25, 1.5);
   } },
+  enemy_bee: { w: 28, h: 28, paint: (g) => {
+    g.fillStyle(0xcfefff, 0.7).fillEllipse(8, 12, 10, 6).fillEllipse(20, 12, 10, 6);
+    g.fillStyle(0xf2d35e).fillEllipse(14, 16, 18, 14); g.fillStyle(C.outline).fillRect(6, 13, 16, 2).fillRect(6, 17, 16, 2);
+    g.fillStyle(C.outline).fillCircle(11, 14, 1.3).fillCircle(17, 14, 1.3);
+  } },
+  enemy_golem: { w: 40, h: 44, paint: (g) => {
+    g.fillStyle(0x8a939c).fillRect(12, 28, 6, 12).fillRect(22, 28, 6, 12);
+    g.fillStyle(0x9aa3ab).fillRoundedRect(8, 14, 24, 18, 4); g.fillStyle(0xb0b8c0).fillRoundedRect(11, 4, 18, 14, 4);
+    g.fillStyle(C.outline).fillCircle(15, 11, 2).fillCircle(25, 11, 2);
+  } },
+  enemy_flower: { w: 32, h: 40, paint: (g) => {
+    g.fillStyle(0x5cba74).fillRect(14, 22, 4, 16); g.fillStyle(0xff9fb8).fillCircle(16, 5, 5).fillCircle(8, 12, 5).fillCircle(24, 12, 5);
+    g.fillStyle(0xffe28a).fillCircle(16, 14, 5); g.fillStyle(C.outline).fillCircle(13, 13, 1.3).fillCircle(19, 13, 1.3);
+  } },
 
   // ---------- 通用 ----------
   shadow: { w: 32, h: 12, paint: (g) => { g.fillStyle(0x000000, 0.22).fillEllipse(16, 6, 28, 10); } },
@@ -116,6 +130,12 @@ export const PLACEHOLDERS: Record<string, Placeholder> = {
   icon_wind_blade: orbIcon(0x9ff0d8, (g) => { g.fillStyle(0xffffff).fillEllipse(16, 16, 16, 5); }),
   icon_frost_nova: orbIcon(0xa8d8ff, (g) => { g.lineStyle(2, 0xffffff).strokeCircle(16, 16, 6); }),
   icon_heal: orbIcon(0xffe28a, (g) => { g.fillStyle(0xffffff).fillRect(14, 9, 4, 14).fillRect(9, 14, 14, 4); }),
+  fx_fireball: { w: 24, h: 24, paint: (g) => { g.fillStyle(0xff8f5a).fillCircle(12, 12, 9); g.fillStyle(0xffd07a).fillCircle(12, 12, 6); } },
+  fx_whirlwind: { w: 64, h: 64, paint: (g) => { g.fillStyle(0x9ff0d8, 0.25).fillCircle(32, 32, 28); g.lineStyle(4, 0x9ff0d8, 0.9); g.beginPath(); g.arc(32, 32, 22, 0, 4.5); g.strokePath(); } },
+  fx_triple_slash: { w: 64, h: 64, paint: (g) => { g.lineStyle(3, 0xffffff, 0.9); g.beginPath(); g.arc(32, 28, 22, -0.8, 0.6); g.strokePath(); g.beginPath(); g.arc(32, 34, 22, -0.6, 0.8); g.strokePath(); } },
+  icon_fireball: orbIcon(0xff8f5a, (g) => { g.fillStyle(0xffd07a).fillCircle(16, 16, 6); }),
+  icon_whirlwind: orbIcon(0x9ff0d8, (g) => { g.lineStyle(2, 0xffffff); g.beginPath(); g.arc(16, 16, 7, 0, 4); g.strokePath(); }),
+  icon_triple_slash: orbIcon(0xe9f6ff, (g) => { g.lineStyle(2, C.outline); g.lineBetween(9, 11, 22, 9); g.lineBetween(9, 16, 23, 16); g.lineBetween(9, 21, 22, 23); }),
 };
 
 /** 为所有缺失的 key 生成占位纹理。 */

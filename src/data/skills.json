@@ -20,6 +20,22 @@
     "icon": "icon_heal", "fx": "fx_heal", "color": "#ffe28a",
     "cooldown": 4000, "mp": 14, "heal": 40
   },
+  "fireball": {
+    "name": "火球", "description": "射出高伤火球，命中后消失。", "type": "projectile",
+    "icon": "icon_fireball", "fx": "fx_fireball", "color": "#ff8f5a",
+    "cooldown": 900, "mp": 8, "damage": 22, "speed": 380, "range": 340, "knockback": 140,
+    "params": { "pierce": false }
+  },
+  "whirlwind": {
+    "name": "旋风斩", "description": "身周小范围旋风，冷却较短。", "type": "aoe",
+    "icon": "icon_whirlwind", "fx": "fx_whirlwind", "color": "#9ff0d8",
+    "cooldown": 900, "mp": 5, "damage": 10, "radius": 56, "knockback": 160
+  },
+  "triple_slash": {
+    "name": "三连斩", "description": "大扇形三连斩，清场用。", "type": "melee",
+    "icon": "icon_triple_slash", "fx": "fx_triple_slash", "color": "#ffffff",
+    "cooldown": 1100, "mp": 7, "damage": 15, "range": 60, "arc": 160, "knockback": 200
+  },
   "slime_tackle": {
     "name": "冲撞", "description": "敌人技能：近身冲撞。", "type": "melee",
     "icon": "icon_slash", "color": "#7fd36b",
@@ -29,5 +45,20 @@
     "name": "孢子弹", "description": "敌人技能：远程孢子。", "type": "projectile",
     "icon": "icon_wind_blade", "fx": "fx_spore", "color": "#d7a6ff",
     "cooldown": 1800, "mp": 0, "damage": 7, "speed": 220, "range": 300, "knockback": 80
+  },
+  "bee_sting": {
+    "name": "蜂刺", "description": "敌人技能：快速近刺。", "type": "melee",
+    "icon": "icon_slash", "color": "#f2d35e",
+    "cooldown": 700, "mp": 0, "damage": 6, "range": 30, "arc": 70, "knockback": 120
+  },
+  "golem_quake": {
+    "name": "震地", "description": "敌人技能：脚下冲击。", "type": "aoe",
+    "icon": "icon_frost_nova", "fx": "fx_hit", "color": "#9aa3ab",
+    "cooldown": 2800, "mp": 0, "damage": 14, "radius": 70, "knockback": 280
+  },
+  "petal_shot": {
+    "name": "花瓣弹", "description": "敌人技能：远程花瓣。", "type": "projectile",
+    "icon": "icon_wind_blade", "fx": "fx_spore", "color": "#ff9fb8",
+    "cooldown": 1100, "mp": 0, "damage": 6, "speed": 260, "range": 320, "knockback": 60
   }
 }
