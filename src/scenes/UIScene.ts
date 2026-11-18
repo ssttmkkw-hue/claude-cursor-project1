@@ -1,59 +1,78 @@
 import Phaser from 'phaser';
-import { KEYS, UI_FONT } from '@/config';
+import { KEYS } from '@/config';
 import { EventBus, GameEvents, type PlayerStatsPayload } from '@/core/EventBus';
 import { Skills } from '@/data/registry';
 import { GameState, expToNext } from '@/core/GameState';
+import { Skin, uiText } from '@/ui/skin';
 
 /**
  * HUD 场景，叠在 WorldScene 上方，切图时不重启。只通过 EventBus 收数据。
- * 视觉部分（面板/字体/图标）是 Cursor 的美术任务，见 docs/cursor-tasks/。
+ * 皮肤见 ART-08 / src/ui/skin.ts。
  */
-const PANEL = 0x24343c;
-const text = (size: number, color = '#ffffff') => ({
-  fontFamily: UI_FONT, fontSize: `${size}px`, color, stroke: '#24343c', strokeThickness: 3,
-});
-
-interface Slot { bg: Phaser.GameObjects.Rectangle; icon: Phaser.GameObjects.Image; cd: Phaser.GameObjects.Rectangle; until: number; total: number; }
+interface Slot {
+  bg: Phaser.GameObjects.Image | Phaser.GameObjects.Rectangle;
+  icon: Phaser.GameObjects.Image;
+  cd: Phaser.GameObjects.Rectangle;
+  until: number;
+  total: number;
+}
 
 export class UIScene extends Phaser.Scene {
   private bars!: Phaser.GameObjects.Graphics;
+  private hudPanel!: Phaser.GameObjects.Graphics;
   private levelText!: Phaser.GameObjects.Text;
   private slots: Slot[] = [];
   private banner!: Phaser.GameObjects.Text;
+  private bannerBg!: Phaser.GameObjects.Graphics;
   private toast!: Phaser.GameObjects.Text;
   private dialog!: Phaser.GameObjects.Container;
   private dialogText!: Phaser.GameObjects.Text;
   private dialogName!: Phaser.GameObjects.Text;
+  private dialogHint!: Phaser.GameObjects.Text;
   private dialogLines: string[] = [];
+  private typing = false;
+  private fullLine = '';
+  private typeEvent?: Phaser.Time.TimerEvent;
 
   constructor() { super('UI'); }
 
   create() {
     const { width, height } = this.scale;
-    this.bars = this.add.graphics();
-    this.levelText = this.add.text(16, 12, '', text(14));
+    void document.fonts?.load?.('16px "ZCOOL KuaiLe"').catch(() => undefined);
 
-    // 技能栏
-    const size = 44, gap = 10, total = KEYS.skills.length * size + (KEYS.skills.length - 1) * gap;
+    this.hudPanel = this.add.graphics();
+    this.hudPanel.fillStyle(Skin.panel, 0.82);
+    this.hudPanel.fillRoundedRect(8, 6, 236, 76, 10);
+    this.hudPanel.lineStyle(2, Skin.accent, 0.75);
+    this.hudPanel.strokeRoundedRect(8, 6, 236, 76, 10);
+
+    this.bars = this.add.graphics();
+    this.levelText = this.add.text(18, 12, '', uiText(15, Skin.textAccent));
+
+    const size = 48, gap = 10, total = KEYS.skills.length * size + (KEYS.skills.length - 1) * gap;
     KEYS.skills.forEach((key, i) => {
-      const x = width / 2 - total / 2 + i * (size + gap) + size / 2, y = height - 40;
-      const bg = this.add.rectangle(x, y, size, size, PANEL, 0.85).setStrokeStyle(2, 0xbff6ff, 0.8);
-      const icon = this.add.image(x, y, 'icon_slash').setDisplaySize(size - 8, size - 8).setVisible(false);
+      const x = width / 2 - total / 2 + i * (size + gap) + size / 2, y = height - 42;
+      const bg = this.textures.exists('ui_slot')
+        ? this.add.image(x, y, 'ui_slot').setDisplaySize(size, size)
+        : this.add.rectangle(x, y, size, size, Skin.panel, Skin.panelAlpha).setStrokeStyle(2, Skin.accent, 0.85);
+      const icon = this.add.image(x, y, 'icon_slash').setDisplaySize(size - 12, size - 12).setVisible(false);
       const cd = this.add.rectangle(x - size / 2, y + size / 2, size, 0, 0x000000, 0.55).setOrigin(0, 1);
-      this.add.text(x + size / 2 - 4, y + size / 2 - 2, key, text(11)).setOrigin(1, 1);
+      this.add.text(x + size / 2 - 5, y + size / 2 - 3, key, uiText(12, Skin.textAccent)).setOrigin(1, 1);
       this.slots.push({ bg, icon, cd, until: 0, total: 1 });
     });
 
-    this.banner = this.add.text(width / 2, 70, '', { ...text(26), strokeThickness: 5 }).setOrigin(0.5).setAlpha(0);
-    this.toast = this.add.text(width / 2, height - 100, '', text(16, '#fff6c8')).setOrigin(0.5).setAlpha(0);
+    this.bannerBg = this.add.graphics().setAlpha(0);
+    this.banner = this.add.text(width / 2, 70, '', { ...uiText(28, Skin.text), strokeThickness: 5 }).setOrigin(0.5).setAlpha(0);
+    this.toast = this.add.text(width / 2, height - 108, '', uiText(17, Skin.textWarn)).setOrigin(0.5).setAlpha(0);
 
-    // 对话框
-    const dw = width - 120, dh = 110;
-    const box = this.add.rectangle(0, 0, dw, dh, PANEL, 0.92).setStrokeStyle(2, 0xbff6ff).setOrigin(0.5);
-    this.dialogName = this.add.text(-dw / 2 + 18, -dh / 2 + 10, '', text(15, '#9ff0d8'));
-    this.dialogText = this.add.text(-dw / 2 + 18, -dh / 2 + 36, '', { ...text(16), wordWrap: { width: dw - 36 } });
-    const more = this.add.text(dw / 2 - 14, dh / 2 - 10, '▼ E', text(12)).setOrigin(1, 1);
-    this.dialog = this.add.container(width / 2, height - 90, [box, this.dialogName, this.dialogText, more]).setVisible(false);
+    const dw = width - 120, dh = 118;
+    const box = this.textures.exists('ui_panel')
+      ? this.add.nineslice(0, 0, 'ui_panel', undefined, dw, dh, 16, 16, 16, 16).setOrigin(0.5)
+      : this.add.rectangle(0, 0, dw, dh, Skin.panel, 0.94).setStrokeStyle(2, Skin.accent).setOrigin(0.5);
+    this.dialogName = this.add.text(-dw / 2 + 20, -dh / 2 + 12, '', uiText(16, Skin.textAccent));
+    this.dialogText = this.add.text(-dw / 2 + 20, -dh / 2 + 40, '', { ...uiText(17), wordWrap: { width: dw - 40 } });
+    this.dialogHint = this.add.text(dw / 2 - 16, dh / 2 - 12, '▼ E', uiText(13, Skin.textMuted)).setOrigin(1, 1);
+    this.dialog = this.add.container(width / 2, height - 92, [box, this.dialogName, this.dialogText, this.dialogHint]).setVisible(false);
     this.input.keyboard!.on('keydown-E', () => this.advanceDialog());
     this.input.keyboard!.on('keydown-SPACE', () => this.advanceDialog());
 
@@ -69,7 +88,6 @@ export class UIScene extends Phaser.Scene {
     on<{ level: number }>(GameEvents.LEVEL_UP, ({ level }) => this.showToast(`升级！Lv.${level}`));
     on<{ speaker?: string; lines: string[] }>(GameEvents.DIALOG_OPEN, ({ speaker, lines }) => this.openDialog(speaker, lines));
 
-    // 首次绘制（World 可能比本场景先创建，错过了第一批事件）
     const p = GameState.data.player;
     this.drawStats({ ...p, nextExp: expToNext(p.level) });
     this.setSlots(GameState.data.slots);
@@ -78,19 +96,20 @@ export class UIScene extends Phaser.Scene {
   update(time: number) {
     for (const s of this.slots) {
       const left = Math.max(0, s.until - time);
-      s.cd.height = left > 0 ? -44 * (left / s.total) : 0; // 负高度 = 自底向上
+      s.cd.height = left > 0 ? -48 * (left / s.total) : 0;
     }
   }
 
   private drawStats(p: PlayerStatsPayload) {
     const g = this.bars.clear();
     const bar = (y: number, v: number, max: number, color: number) => {
-      g.fillStyle(PANEL, 0.85).fillRoundedRect(14, y, 204, 14, 6);
-      g.fillStyle(color).fillRoundedRect(16, y + 2, Math.max(0, 200 * (v / max)), 10, 4);
+      g.fillStyle(Skin.panelInner, 0.95).fillRoundedRect(16, y, 212, 14, 6);
+      g.lineStyle(1, Skin.accent, 0.35).strokeRoundedRect(16, y, 212, 14, 6);
+      g.fillStyle(color).fillRoundedRect(18, y + 2, Math.max(0, 208 * (v / max)), 10, 4);
     };
-    bar(34, p.hp, p.maxHp, 0xff8fa3);
-    bar(52, p.mp, p.maxMp, 0x8fc8ff);
-    g.fillStyle(0xfff0a8).fillRect(16, 70, 200 * (p.exp / p.nextExp), 3);
+    bar(34, p.hp, p.maxHp, Skin.danger);
+    bar(52, p.mp, p.maxMp, Skin.mana);
+    g.fillStyle(Skin.exp).fillRoundedRect(18, 70, Math.max(0, 208 * (p.exp / p.nextExp)), 4, 2);
     this.levelText.setText(`Lv.${p.level}   HP ${Math.ceil(p.hp)}/${p.maxHp}   MP ${Math.floor(p.mp)}/${p.maxMp}`);
   }
 
@@ -99,16 +118,24 @@ export class UIScene extends Phaser.Scene {
       const s = this.slots[i]; if (!s) return;
       const skill = id ? Skills[id] : null;
       s.icon.setVisible(!!skill);
-      if (skill && this.textures.exists(skill.icon)) s.icon.setTexture(skill.icon).setDisplaySize(36, 36);
+      if (skill && this.textures.exists(skill.icon)) s.icon.setTexture(skill.icon).setDisplaySize(34, 34);
     });
   }
 
   private showBanner(name: string) {
-    this.banner.setText(name).setAlpha(0).setY(60);
+    const { width } = this.scale;
+    this.banner.setText(name).setAlpha(0).setY(58);
+    this.bannerBg.clear().setAlpha(0);
+    const tw = Math.min(360, Math.max(160, name.length * 28 + 48));
+    this.bannerBg.fillStyle(Skin.panel, 0.88).fillRoundedRect(width / 2 - tw / 2, 48, tw, 44, 12);
+    this.bannerBg.lineStyle(2, Skin.accent, 0.8).strokeRoundedRect(width / 2 - tw / 2, 48, tw, 44, 12);
     this.tweens.killTweensOf(this.banner);
+    this.tweens.killTweensOf(this.bannerBg);
+    this.tweens.add({ targets: this.bannerBg, alpha: 1, duration: 380, ease: 'Cubic.easeOut', yoyo: false,
+      onComplete: () => this.tweens.add({ targets: this.bannerBg, alpha: 0, delay: 1300, duration: 550 }) });
     this.tweens.chain({ targets: this.banner, tweens: [
-      { alpha: 1, y: 70, duration: 400, ease: 'Cubic.easeOut' },
-      { alpha: 0, duration: 600, delay: 1400 },
+      { alpha: 1, y: 66, duration: 380, ease: 'Cubic.easeOut' },
+      { alpha: 0, duration: 550, delay: 1300 },
     ] });
   }
 
@@ -122,15 +149,43 @@ export class UIScene extends Phaser.Scene {
     this.dialogLines = [...lines];
     this.dialogName.setText(speaker ?? '');
     this.dialog.setVisible(true);
-    this.dialogText.setText(this.dialogLines.shift() ?? '');
+    this.startTyping(this.dialogLines.shift() ?? '');
+  }
+
+  private startTyping(line: string) {
+    this.typeEvent?.remove(false);
+    this.fullLine = line;
+    this.typing = line.length > 0;
+    this.dialogText.setText('');
+    this.dialogHint.setText(this.typing ? '▼ E 跳过' : '▼ E');
+    if (!this.typing) return;
+    let i = 0;
+    this.typeEvent = this.time.addEvent({
+      delay: 26,
+      repeat: Math.max(0, line.length - 1),
+      callback: () => {
+        i += 1;
+        this.dialogText.setText(line.slice(0, i));
+        if (i >= line.length) {
+          this.typing = false;
+          this.dialogHint.setText('▼ E');
+        }
+      },
+    });
   }
 
   private advanceDialog() {
     if (!this.dialog.visible) return;
+    if (this.typing) {
+      this.typeEvent?.remove(false);
+      this.dialogText.setText(this.fullLine);
+      this.typing = false;
+      this.dialogHint.setText('▼ E');
+      return;
+    }
     const next = this.dialogLines.shift();
-    if (next !== undefined) { this.dialogText.setText(next); return; }
+    if (next !== undefined) { this.startTyping(next); return; }
     this.dialog.setVisible(false);
-    // 延迟一帧再解锁，避免同一次 E 键又触发交互
     this.time.delayedCall(50, () => EventBus.emit(GameEvents.DIALOG_CLOSED));
   }
 }

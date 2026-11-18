@@ -65,6 +65,8 @@ export const ASSETS: AssetEntry[] = [
   { key: 'icon_heal', type: 'svg', url: 'assets/ui/icon_heal.svg', width: 32, height: 32 },
 
   // ===== ART-08 UI/字体 =====
+  { key: 'ui_panel', type: 'svg', url: 'assets/ui/panel_frame.svg', width: 64, height: 64 },
+  { key: 'ui_slot', type: 'svg', url: 'assets/ui/slot_frame.svg', width: 48, height: 48 },
 
   // ===== FEAT-02 音频 =====
 

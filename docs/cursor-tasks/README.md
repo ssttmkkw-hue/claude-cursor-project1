@@ -23,7 +23,7 @@
 | [ART-05](ART-05-npc-sprites.md) | NPC 立绘（村长、澪） | 美术 | ART-04（统一画风） | 已完成 |
 | [ART-06](ART-06-enemy-sprites.md) | 敌人（史莱姆、孢子菇） | 美术 | — | 已完成 |
 | [ART-07](ART-07-skill-fx-icons.md) | 技能特效 + 技能图标 | 美术 | — | 已完成 |
-| [ART-08](ART-08-ui-skin.md) | HUD / 对话框 / 字体 皮肤 | 美术+UI | — | 待领取 |
+| [ART-08](ART-08-ui-skin.md) | HUD / 对话框 / 字体 皮肤 | 美术+UI | — | 已完成 |
 | [FEAT-01](FEAT-01-skill-menu.md) | 技能装备菜单 | 功能 | — | 已完成 |
 | [FEAT-02](FEAT-02-audio.md) | 音频系统（BGM/音效） | 功能 | — | 待领取 |
 | [FEAT-03](FEAT-03-gamepad.md) | 手柄支持 | 功能 | — | 待领取 |

@@ -10,7 +10,8 @@ export const DEPTH = {
   FX_OFFSET: 5000,
 } as const;
 
-export const UI_FONT = '"Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif';
+/** 第一项为 ART-08 本地字体（站酷快乐体 / ZCOOL KuaiLe，OFL）。 */
+export const UI_FONT = '"ZCOOL KuaiLe", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif';
 
 /** 按键绑定（Phaser KeyCodes 名称）。技能槽位 0..3 对应 SKILL_KEYS。 */
 export const KEYS = {
