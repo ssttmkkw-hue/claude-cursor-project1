@@ -1,5 +1,7 @@
 # Cursor 开工说明（多线并行版）
 
+> **只开两个 Agent（双开）时**，直接用 [`docs/cursor-lines/LINE-A.md`](cursor-lines/LINE-A.md) 和 [`LINE-B.md`](cursor-lines/LINE-B.md)，下面的分波计划可以跳过。
+
 ## 0. 仓库与分支
 
 - 仓库：`https://github.com/ssttmkkw-hue/claude-cursor-project1`
