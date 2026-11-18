@@ -38,6 +38,9 @@ export function buildMap(scene: Phaser.Scene, def: MapDef): BuiltMap {
 
   // ---------- 地面
   const rt = scene.add.renderTexture(0, 0, widthPx, heightPx).setOrigin(0, 0).setDepth(DEPTH.GROUND);
+  // 先按纹理分组收集，再一次 beginDraw/endDraw 批量绘制。
+  // 逐格 rt.drawFrame 会每格切一次 framebuffer，大地图在 WebGL 下会卡几十秒。
+  const draws = new Map<string, [number, number][]>();
   for (let y = 0; y < rows; y++) {
     let runStart = -1;
     for (let x = 0; x <= cols; x++) {
@@ -48,12 +51,18 @@ export function buildMap(scene: Phaser.Scene, def: MapDef): BuiltMap {
       if (x < cols) {
         const v = tile.variants ? hash(x, y) % tile.variants : 0;
         const key = v > 0 && scene.textures.exists(`${tile.texture}_${v}`) ? `${tile.texture}_${v}` : tile.texture;
-        rt.drawFrame(ensureTexture(scene, key), undefined, x * TILE, y * TILE);
+        const k = ensureTexture(scene, key);
+        if (!draws.has(k)) draws.set(k, []);
+        draws.get(k)!.push([x * TILE, y * TILE]);
       }
       if (solid && runStart < 0) runStart = x;
       if (!solid && runStart >= 0) { addSolid(runStart * TILE, y * TILE, (x - runStart) * TILE, TILE); runStart = -1; }
     }
   }
+
+  rt.beginDraw();
+  for (const [key, list] of draws) for (const [x, y] of list) rt.batchDrawFrame(key, undefined, x, y);
+  rt.endDraw();
 
   // ---------- 物体
   def.objects.forEach((row, y) => {

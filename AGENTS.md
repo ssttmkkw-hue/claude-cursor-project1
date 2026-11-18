@@ -1,7 +1,7 @@
 # AGENTS.md —— 给 AI 协作者的开工须知
 
 本项目由 **Claude（核心框架）** 和 **Cursor / Cursor Agent（美术、内容、外围功能）** 协作开发。
-Cursor 开工前请按顺序读：本文件 → `docs/CURSOR_KICKOFF.md`（分支与并行规则）→ 你领取的任务卡 → 任务卡里列出的文档。
+Cursor 开工前请按顺序读：本文件 → **`docs/cursor-lines/SOLO.md`（当前采用的单线开发说明）** → 你正在做的任务卡 → 任务卡里列出的文档。
 
 ## 分工与“所有权”
 
@@ -22,9 +22,9 @@ Cursor 开工前请按顺序读：本文件 → `docs/CURSOR_KICKOFF.md`（分�
 3. **占位图兜底机制不能破坏**：manifest 里登记的文件加载失败时会回落到占位图，这是设计行为。
 4. **一个任务卡 = 一个提交（或一个分支）**，提交信息以任务编号开头，如 `ART-01: 地面瓦片正式美术`。
 5. 完成后新建 `docs/handoff/<任务编号>.md` 写交接记录（做了什么、有什么遗留、需要 Claude 做什么）。不要在并行分支里改 `docs/HANDOFF.md` 和看板状态表（由合并的人统一更新）。
-8. `src/art/manifest.ts` 只在自己任务的分区里追加。
-6. 不引入新的运行时依赖（npm dependencies）除非任务卡允许；工具类 devDependencies 可以，写明用途。
-7. 文本、注释用中文；代码标识符用英文。
+6. `src/art/manifest.ts` 只在自己任务的分区里追加。
+7. 不引入新的运行时依赖（npm dependencies）除非任务卡允许；工具类 devDependencies 可以，写明用途。
+8. 文本、注释用中文；代码标识符用英文。
 
 ## 常用命令
 
