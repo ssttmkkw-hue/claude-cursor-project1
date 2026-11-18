@@ -3,7 +3,7 @@ import { ASSETS } from '@/art/manifest';
 import { generateMissingPlaceholders } from '@/art/placeholders';
 import { GameState } from '@/core/GameState';
 
-/** 加载 manifest 里的正式美术 → 缺的用占位图补 → 读档 → 进入世界。 */
+/** 加载 manifest 里的正式美术 → 缺的用占位图补 → 进入标题画面。 */
 export class BootScene extends Phaser.Scene {
   constructor() { super('Boot'); }
 
@@ -25,7 +25,7 @@ export class BootScene extends Phaser.Scene {
   create() {
     generateMissingPlaceholders(this);
     const hasSave = GameState.load();
-    this.scene.start('World', { mapId: GameState.data.mapId, spawn: hasSave ? GameState.data.spawn : 'default' });
-    this.scene.launch('UI');
+    this.registry.set('hasSave', hasSave);
+    this.scene.start('Title');
   }
 }

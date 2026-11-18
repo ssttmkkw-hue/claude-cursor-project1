@@ -14,3 +14,8 @@
 - 做了什么：引入站酷快乐体（OFL，`public/assets/fonts/`）；`src/ui/skin.ts` 统一深青+浅青描边；`UIScene` HUD/技能栏/横幅/对话框换肤；对话框打字机（E 先补全再翻页）；`SkillMenuScene` 共用皮肤；`ui_panel`/`ui_slot` 登记。
 - 遗留：无。
 - 请求 Claude：无
+
+## FEAT-04 · 标题画面
+- 做了什么：`TitleScene`（新游戏/继续/设置占位）；Boot 改为进入 Title；无存档时「继续」置灰；背景用草地瓦片+房子微动。
+- 遗留：设置项仅为占位。
+- 请求 Claude：无
