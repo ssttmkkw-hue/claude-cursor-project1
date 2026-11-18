@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- 四条横向木板铺满，上下接缝与板缝相同，左右无缝 -->
+  <g>
+    <rect y="0" width="32" height="2" fill="#ecd4ae"/>
+    <rect y="2" width="32" height="5" fill="#c9a06c"/>
+    <rect y="7" width="32" height="1" fill="#8d6844"/>
+    <rect y="8" width="32" height="2" fill="#e4c89a"/>
+    <rect y="10" width="32" height="5" fill="#b98a5a"/>
+    <rect y="15" width="32" height="1" fill="#8d6844"/>
+    <rect y="16" width="32" height="2" fill="#f0d8b2"/>
+    <rect y="18" width="32" height="5" fill="#d2ae78"/>
+    <rect y="23" width="32" height="1" fill="#8d6844"/>
+    <rect y="24" width="32" height="2" fill="#e7cba0"/>
+    <rect y="26" width="32" height="5" fill="#c09560"/>
+    <rect y="31" width="32" height="1" fill="#8d6844"/>
+  </g>
+  <g fill="#6b4e32">
+    <circle cx="6" cy="4.2" r="0.7"/>
+    <circle cx="26" cy="4.2" r="0.7"/>
+    <circle cx="6" cy="12.2" r="0.7"/>
+    <circle cx="26" cy="12.2" r="0.7"/>
+    <circle cx="6" cy="20.2" r="0.7"/>
+    <circle cx="26" cy="20.2" r="0.7"/>
+    <circle cx="6" cy="28.2" r="0.7"/>
+    <circle cx="26" cy="28.2" r="0.7"/>
+  </g>
+</svg>
