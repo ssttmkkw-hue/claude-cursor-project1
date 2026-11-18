@@ -1,0 +1,25 @@
+{
+  "ground": {
+    "grass":   { "texture": "tile_grass", "variants": 3 },
+    "flowers": { "texture": "tile_flowers" },
+    "path":    { "texture": "tile_path" },
+    "sand":    { "texture": "tile_sand" },
+    "water":   { "texture": "tile_water", "solid": true },
+    "bridge":  { "texture": "tile_bridge" },
+    "stone":   { "texture": "tile_stone" }
+  },
+  "objects": {
+    "tree":  { "texture": "obj_tree", "solid": true },
+    "pine":  { "texture": "obj_pine", "solid": true },
+    "bush":  { "texture": "obj_bush", "solid": true },
+    "rock":  { "texture": "obj_rock", "solid": true },
+    "fence": { "texture": "obj_fence", "solid": true },
+    "sign":  { "texture": "obj_sign", "solid": true },
+    "house": { "texture": "obj_house", "solid": true, "footprint": { "w": 3, "h": 2 } },
+    "well":  { "texture": "obj_well", "solid": true }
+  },
+  "legend": {
+    "ground":  { ".": "grass", ",": "flowers", "=": "path", ":": "sand", "~": "water", "b": "bridge", "_": "stone" },
+    "objects": { "T": "tree", "P": "pine", "o": "bush", "r": "rock", "f": "fence", "s": "sign", "H": "house", "w": "well" }
+  }
+}

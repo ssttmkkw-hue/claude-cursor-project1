@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- 灰缝贴右、下各 1px，与邻接瓦片合成 2px，和石板间隙一致 -->
+  <rect width="32" height="32" fill="#c3ccd3"/>
+  <g>
+    <rect x="1" y="1" width="14" height="14" rx="2" fill="#dce3e8"/>
+    <ellipse cx="6.2" cy="5.4" rx="3.2" ry="2.1" fill="#f7fafb" opacity="0.55"/>
+  </g>
+  <g>
+    <rect x="17" y="1" width="14" height="14" rx="2" fill="#d3dbe1"/>
+    <ellipse cx="21.5" cy="5.2" rx="2.8" ry="1.8" fill="#f4f7f8" opacity="0.45"/>
+  </g>
+  <g>
+    <rect x="1" y="17" width="14" height="14" rx="2" fill="#d0d8de"/>
+    <ellipse cx="6" cy="21.2" rx="2.6" ry="1.7" fill="#f3f6f8" opacity="0.4"/>
+  </g>
+  <g>
+    <rect x="17" y="17" width="14" height="14" rx="2" fill="#d8dfe5"/>
+    <ellipse cx="22" cy="21.4" rx="3" ry="1.9" fill="#f7fafb" opacity="0.5"/>
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+---
+description: 游戏数据（地图/技能/敌人）规则
+globs: src/data/**
+alwaysApply: false
+---
+- 格式见 `docs/DATA_FORMATS.md`，类型见 `src/data/types.ts`。
+- 地图文件名 = 地图 id；ground/objects 行数与每行长度一致；坐标为格坐标。
+- 出口两端都要有对应出生点，出生点离出口 ≥ 2 格。
+- 改完必须 `npm run validate`（0 error）。

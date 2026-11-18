@@ -1,0 +1,33 @@
+{
+  "slash": {
+    "name": "疾风斩", "description": "向前方挥出一记扇形斩击。", "type": "melee",
+    "icon": "icon_slash", "fx": "fx_slash", "color": "#ffffff",
+    "cooldown": 320, "mp": 0, "damage": 12, "range": 52, "arc": 120, "knockback": 220
+  },
+  "wind_blade": {
+    "name": "风刃", "description": "射出一道穿透的风之刃。", "type": "projectile",
+    "icon": "icon_wind_blade", "fx": "fx_wind_blade", "color": "#9ff0d8",
+    "cooldown": 700, "mp": 6, "damage": 16, "speed": 460, "range": 380, "knockback": 120,
+    "params": { "pierce": true }
+  },
+  "frost_nova": {
+    "name": "霜华", "description": "以自身为中心释放冰霜冲击。", "type": "aoe",
+    "icon": "icon_frost_nova", "fx": "fx_frost_nova", "color": "#a8d8ff",
+    "cooldown": 2500, "mp": 12, "damage": 20, "radius": 96, "knockback": 260
+  },
+  "heal": {
+    "name": "治愈之光", "description": "恢复生命。", "type": "heal",
+    "icon": "icon_heal", "fx": "fx_heal", "color": "#ffe28a",
+    "cooldown": 4000, "mp": 14, "heal": 40
+  },
+  "slime_tackle": {
+    "name": "冲撞", "description": "敌人技能：近身冲撞。", "type": "melee",
+    "icon": "icon_slash", "color": "#7fd36b",
+    "cooldown": 1200, "mp": 0, "damage": 8, "range": 34, "arc": 90, "knockback": 200
+  },
+  "spore_shot": {
+    "name": "孢子弹", "description": "敌人技能：远程孢子。", "type": "projectile",
+    "icon": "icon_wind_blade", "fx": "fx_spore", "color": "#d7a6ff",
+    "cooldown": 1800, "mp": 0, "damage": 7, "speed": 220, "range": 300, "knockback": 80
+  }
+}
