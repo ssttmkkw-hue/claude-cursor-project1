@@ -36,6 +36,10 @@ export const ASSETS: AssetEntry[] = [
   { key: 'obj_rock', type: 'svg', url: 'assets/objects/rock.svg', width: 32, height: 32 },
 
   // ===== ART-03 村庄建筑 =====
+  { key: 'obj_house', type: 'svg', url: 'assets/objects/house.svg', width: 96, height: 112 },
+  { key: 'obj_fence', type: 'svg', url: 'assets/objects/fence.svg', width: 32, height: 32 },
+  { key: 'obj_sign', type: 'svg', url: 'assets/objects/sign.svg', width: 32, height: 40 },
+  { key: 'obj_well', type: 'svg', url: 'assets/objects/well.svg', width: 32, height: 48 },
 
   // ===== ART-04 主角 =====
   { key: 'player', type: 'spritesheet', url: 'assets/characters/player.png', frameWidth: 32, frameHeight: 48 },

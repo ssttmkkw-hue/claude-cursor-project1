@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="48" viewBox="0 0 32 48">
+  <!-- 带小屋顶的石井 -->
+  <ellipse cx="16" cy="46" rx="12" ry="2" fill="#3a4a52" opacity="0.2"/>
+  <!-- 立柱 -->
+  <rect x="4" y="10" width="3.5" height="26" rx="1" fill="#8f6540" stroke="#3a4a52" stroke-width="1"/>
+  <rect x="24.5" y="10" width="3.5" height="26" rx="1" fill="#8f6540" stroke="#3a4a52" stroke-width="1"/>
+  <!-- 小屋顶 -->
+  <path d="M16 1 L1 14 L31 14 Z" fill="#e58f8f" stroke="#3a4a52" stroke-width="1.25" stroke-linejoin="round"/>
+  <path d="M16 5 L6 13 L26 13 Z" fill="#f2b0a6" opacity="0.7"/>
+  <!-- 横梁 + 吊桶绳 -->
+  <rect x="5" y="14" width="22" height="2.5" rx="1" fill="#b98a5a" stroke="#3a4a52" stroke-width="0.8"/>
+  <line x1="16" y1="16.5" x2="16" y2="26" stroke="#3a4a52" stroke-width="1"/>
+  <rect x="13.5" y="25" width="5" height="5" rx="1" fill="#b98a5a" stroke="#3a4a52" stroke-width="0.8"/>
+  <!-- 井口 -->
+  <ellipse cx="16" cy="40" rx="13" ry="7" fill="#c9cdd2" stroke="#3a4a52" stroke-width="1.25"/>
+  <ellipse cx="16" cy="39" rx="9" ry="4.5" fill="#7ccbe8"/>
+  <ellipse cx="14" cy="37.5" rx="4" ry="1.5" fill="#b4e6f5" opacity="0.7"/>
+</svg>

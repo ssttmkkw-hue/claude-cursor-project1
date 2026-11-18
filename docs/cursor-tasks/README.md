@@ -18,7 +18,7 @@
 |---|---|---|---|---|
 | [ART-01](ART-01-ground-tiles.md) | 地面瓦片 | 美术 | — | 已完成 |
 | [ART-02](ART-02-nature-objects.md) | 树木/石头/灌木等自然物体 | 美术 | — | 已完成 |
-| [ART-03](ART-03-village-props.md) | 房子/栅栏/告示牌/水井 | 美术 | — | 待领取 |
+| [ART-03](ART-03-village-props.md) | 房子/栅栏/告示牌/水井 | 美术 | — | 已完成 |
 | [ART-04](ART-04-player-sprite.md) | 主角 4 方向行走 spritesheet | 美术 | — | 已完成 |
 | [ART-05](ART-05-npc-sprites.md) | NPC 立绘（村长、澪） | 美术 | ART-04（统一画风） | 待领取 |
 | [ART-06](ART-06-enemy-sprites.md) | 敌人（史莱姆、孢子菇） | 美术 | — | 已完成 |

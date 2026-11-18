@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="112" viewBox="0 0 96 112">
+  <!-- 占地底边 3×2 格；门在底边正中 -->
+  <ellipse cx="48" cy="110" rx="40" ry="3.5" fill="#3a4a52" opacity="0.18"/>
+  <!-- 墙体 -->
+  <rect x="10" y="50" width="76" height="60" rx="2" fill="#fff4e0" stroke="#3a4a52" stroke-width="1.5"/>
+  <rect x="12" y="52" width="72" height="8" fill="#ffe9c8" opacity="0.55"/>
+  <!-- 屋顶 -->
+  <path d="M48 6 L2 54 L94 54 Z" fill="#e58f8f" stroke="#3a4a52" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M48 16 L16 50 L80 50 Z" fill="#f2b0a6" opacity="0.75"/>
+  <path d="M40 20 L56 20 L52 28 L44 28 Z" fill="#fff4e0" stroke="#3a4a52" stroke-width="1" opacity="0.9"/>
+  <!-- 窗 -->
+  <rect x="18" y="64" width="16" height="14" rx="1.5" fill="#a8dcf0" stroke="#3a4a52" stroke-width="1.25"/>
+  <path d="M26 64 V78 M18 71 H34" stroke="#3a4a52" stroke-width="1" opacity="0.55"/>
+  <rect x="62" y="64" width="16" height="14" rx="1.5" fill="#a8dcf0" stroke="#3a4a52" stroke-width="1.25"/>
+  <path d="M70 64 V78 M62 71 H78" stroke="#3a4a52" stroke-width="1" opacity="0.55"/>
+  <!-- 门（底边正中） -->
+  <rect x="40" y="80" width="16" height="30" rx="1" fill="#b98a5a" stroke="#3a4a52" stroke-width="1.5"/>
+  <rect x="42" y="82" width="12" height="26" rx="1" fill="#c9a06e" opacity="0.55"/>
+  <circle cx="52" cy="96" r="1.4" fill="#3a4a52"/>
+</svg>
