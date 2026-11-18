@@ -1,0 +1,10 @@
+---
+description: 项目总规则（claude-cursor-project1，2.5D 日式动漫 ARPG，Phaser 3 + TS）
+alwaysApply: true
+---
+- 开工前先读 `AGENTS.md`、`docs/cursor-tasks/README.md` 和你领取的任务卡。
+- `src/core/`、`src/systems/`、`src/entities/Combatant.ts` 由 Claude 维护：只读。需要改动写进 `docs/HANDOFF.md` 的“请求 Claude”。
+- 提交前必须 `npm run build` 与 `npm run validate` 都通过。
+- 不改已有的 key / id 名（纹理、技能、敌人、地图、出生点）。
+- 完成任务后：更新看板状态 + 在 `docs/HANDOFF.md` 顶部追加记录；提交信息以任务编号开头。
+- 中文注释与文案，英文标识符。

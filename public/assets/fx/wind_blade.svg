@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="16" viewBox="0 0 32 16">
+  <!-- 风刃，朝右（中心锚点） -->
+  <ellipse cx="16" cy="8" rx="14" ry="5" fill="#9ff0d8" opacity="0.9"/>
+  <ellipse cx="20" cy="8" rx="8" ry="2.5" fill="#ffffff" opacity="0.95"/>
+  <path d="M4 8 L28 8" stroke="#e8fff8" stroke-width="1.2" opacity="0.7" stroke-linecap="round"/>
+  <path d="M26 4 L31 8 L26 12" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+</svg>

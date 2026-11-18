@@ -1,0 +1,9 @@
+---
+description: 美术资源规则
+globs: public/assets/**, src/art/**
+alwaysApply: false
+---
+- 规格以 `docs/ART_SPEC.md` 与 `src/art/placeholders.ts` 的尺寸为准；锚点：地面铺满，物体/角色底边中点落地，特效中心锚点且朝右。
+- 首选 SVG（根节点写 width/height），放 `public/assets/<分类>/`，在 `src/art/manifest.ts` 的 ASSETS 末尾追加登记，key 与占位图同名。
+- 风格：清新日式动漫、低饱和粉彩、光源左上、描边用深青灰 #3a4a52 而非纯黑。
+- 新增纹理 key 时，同时在 placeholders.ts 加占位图并在 ART_SPEC.md 的清单里登记。

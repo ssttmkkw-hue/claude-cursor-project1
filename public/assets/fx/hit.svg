@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <!-- 命中闪光（中心锚点） -->
+  <polygon points="12,0 14.5,9.5 24,12 14.5,14.5 12,24 9.5,14.5 0,12 9.5,9.5" fill="#ffffff" opacity="0.95"/>
+  <circle cx="12" cy="12" r="3" fill="#fff6c8" opacity="0.85"/>
+</svg>

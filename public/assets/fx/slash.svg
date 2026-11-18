@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- 斩击弧光，朝右（中心锚点） -->
+  <path d="M18 10 C40 18 52 28 54 32 C52 36 40 46 18 54"
+        fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.92"/>
+  <path d="M22 16 C38 22 46 28 48 32 C46 36 38 42 22 48"
+        fill="none" stroke="#bff6ff" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+  <path d="M28 22 C38 26 42 30 43 32 C42 34 38 38 28 42"
+        fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+</svg>
