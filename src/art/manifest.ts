@@ -34,6 +34,16 @@ export const ASSETS: AssetEntry[] = [
   { key: 'enemy_mushroom', type: 'svg', url: 'assets/enemies/mushroom.svg', width: 32, height: 36 },
 
   // ===== ART-07 技能特效/图标 =====
+  { key: 'fx_slash', type: 'svg', url: 'assets/fx/slash.svg', width: 64, height: 64 },
+  { key: 'fx_wind_blade', type: 'svg', url: 'assets/fx/wind_blade.svg', width: 32, height: 16 },
+  { key: 'fx_frost_nova', type: 'svg', url: 'assets/fx/frost_nova.svg', width: 64, height: 64 },
+  { key: 'fx_heal', type: 'svg', url: 'assets/fx/heal.svg', width: 48, height: 48 },
+  { key: 'fx_spore', type: 'svg', url: 'assets/fx/spore.svg', width: 16, height: 16 },
+  { key: 'fx_hit', type: 'svg', url: 'assets/fx/hit.svg', width: 24, height: 24 },
+  { key: 'icon_slash', type: 'svg', url: 'assets/ui/icon_slash.svg', width: 32, height: 32 },
+  { key: 'icon_wind_blade', type: 'svg', url: 'assets/ui/icon_wind_blade.svg', width: 32, height: 32 },
+  { key: 'icon_frost_nova', type: 'svg', url: 'assets/ui/icon_frost_nova.svg', width: 32, height: 32 },
+  { key: 'icon_heal', type: 'svg', url: 'assets/ui/icon_heal.svg', width: 32, height: 32 },
 
   // ===== ART-08 UI/字体 =====
 

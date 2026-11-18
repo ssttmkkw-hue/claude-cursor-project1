@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <!-- 孢子弹（中心锚点） -->
+  <circle cx="8" cy="8" r="6" fill="#d7a6ff" opacity="0.95"/>
+  <circle cx="8" cy="8" r="3.5" fill="#e8c8ff" opacity="0.7"/>
+  <circle cx="6" cy="6" r="2" fill="#ffffff" opacity="0.9"/>
+</svg>
