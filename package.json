@@ -8,12 +8,14 @@
     "build": "tsc --noEmit && vite build",
     "typecheck": "tsc --noEmit",
     "validate": "node tools/validate-data.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "art:sprites": "node tools/build-sprites.mjs"
   },
   "dependencies": {
     "phaser": "3.90.0"
   },
   "devDependencies": {
+    "sharp": "^0.34.4",
     "typescript": "5.9.3",
     "vite": "6.4.6"
   }

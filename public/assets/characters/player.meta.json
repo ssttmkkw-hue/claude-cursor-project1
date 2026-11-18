@@ -1,0 +1,25 @@
+{
+  "file": "public/assets/characters/player.png",
+  "frameWidth": 32,
+  "frameHeight": 48,
+  "cols": 4,
+  "rows": 4,
+  "order": [
+    {
+      "row": 0,
+      "dir": "down"
+    },
+    {
+      "row": 1,
+      "dir": "left"
+    },
+    {
+      "row": 2,
+      "dir": "right"
+    },
+    {
+      "row": 3,
+      "dir": "up"
+    }
+  ]
+}

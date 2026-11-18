@@ -25,6 +25,7 @@ export const ASSETS: AssetEntry[] = [
   // ===== ART-03 村庄建筑 =====
 
   // ===== ART-04 主角 =====
+  { key: 'player', type: 'spritesheet', url: 'assets/characters/player.png', frameWidth: 32, frameHeight: 48 },
 
   // ===== ART-05 NPC =====
 
