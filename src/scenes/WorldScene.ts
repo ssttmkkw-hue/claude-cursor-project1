@@ -91,15 +91,20 @@ export class WorldScene extends Phaser.Scene implements CombatWorld {
   }
 
   update(time: number, delta: number) {
+    const near = this.nearestInteractable();
+    this.player.preferInteract = !!near && !this.dialogOpen;
     this.player.update(time, delta);
     this.enemies = this.enemies.filter((e) => e.active);
     for (const e of this.enemies) e.update({ player: this.player, time, delta });
-    this.updateInteraction();
+    this.updateInteraction(near);
   }
 
-  private updateInteraction() {
+  private nearestInteractable() {
+    return this.interactables.find((i) => Phaser.Math.Distance.Between(i.x, i.y, this.player.x, this.player.y) < i.radius);
+  }
+
+  private updateInteraction(near = this.nearestInteractable()) {
     if (this.dialogOpen) { this.hint.setVisible(false); return; }
-    const near = this.interactables.find((i) => Phaser.Math.Distance.Between(i.x, i.y, this.player.x, this.player.y) < i.radius);
     this.hint.setVisible(!!near);
     if (!near) return;
     this.hint.setPosition(near.x, near.y - 56).setDepth(1e6);

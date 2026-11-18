@@ -39,3 +39,8 @@
 - 做了什么：`AudioManager`（听 EventBus）；自制 CC0 WAV（`tools/gen-audio.mjs` + CREDITS）；四图 BGM + 6 音效；UI 场景挂载；音量存 localStorage。
 - 遗留：受击音需 `COMBATANT_HIT` 事件。
 - 请求 Claude：在 `GameEvents` 增加 `COMBATANT_HIT`，于 `Combatant.takeDamage` emit，便于补受击音效。
+
+## FEAT-03 · 手柄
+- 做了什么：`InputMap`（键盘+手柄，死区 0.2，斜向归一化）；`Player` 改为走 InputMap；`main` 开启 `gamepad`；靠近交互物时 A 优先交互。
+- 遗留：标题/技能菜单尚未接手柄导航（仍可用键盘）。
+- 请求 Claude：无
