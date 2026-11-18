@@ -30,6 +30,8 @@ export const ASSETS: AssetEntry[] = [
   // ===== ART-05 NPC =====
 
   // ===== ART-06 敌人 =====
+  { key: 'enemy_slime', type: 'svg', url: 'assets/enemies/slime.svg', width: 32, height: 28 },
+  { key: 'enemy_mushroom', type: 'svg', url: 'assets/enemies/mushroom.svg', width: 32, height: 36 },
 
   // ===== ART-07 技能特效/图标 =====
 
