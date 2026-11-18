@@ -59,7 +59,7 @@ export class WorldScene extends Phaser.Scene implements CombatWorld {
     });
 
     for (const n of def.npcs ?? []) {
-      this.interactables.push(new Npc(this, n, (npc) => this.openDialog(npc.def.name, npc.def.dialog)));
+      this.interactables.push(new Npc(this, n, (npc) => this.openDialog(npc.def.name, npc.def.dialog, npc.def.portrait)));
     }
     this.setupPickups();
 
@@ -131,10 +131,10 @@ export class WorldScene extends Phaser.Scene implements CombatWorld {
     }
   }
 
-  openDialog(speaker: string | undefined, lines: string[]) {
+  openDialog(speaker: string | undefined, lines: string[], portrait?: string) {
     this.dialogOpen = true;
     this.player.inputLocked = true;
-    EventBus.emit(GameEvents.DIALOG_OPEN, { speaker, lines });
+    EventBus.emit(GameEvents.DIALOG_OPEN, { speaker, lines, portrait });
   }
 
   goTo(mapId: string, spawn: string) {

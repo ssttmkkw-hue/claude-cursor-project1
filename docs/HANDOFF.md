@@ -6,11 +6,18 @@
 
 > 格式：`- [ ] (来源任务) 需求描述 —— 原因`
 
-- （暂无）
+- [x] (FEAT-02) `COMBATANT_HIT` 事件 —— 已完成（2026-11-18），payload 见 `CombatantHitPayload`
 
 ---
 
 ## 记录
+
+### 2026-11-18 · Claude · 合并 SOLO（v0.2 完成）+ 核心小接口
+- 合并 `cursor/dev`（ART-03/05/08、FEAT-02/03/04、CONTENT-01/02/03）。实测：标题 → 新游戏 → 村庄/森林/湖畔/海边均可进入，切图约 1.2s，无报错。
+- 新增事件：`COMBATANT_HIT`（任何单位受击，含 killed）、`SKILL_ACTION`（任何单位施放成功）。
+- 动作帧：spritesheet 第 4–7 行 attack、8–11 行 cast，施放技能时自动播放（技能 JSON 可写 `"anim"`），无则跳过。规格见 ART_SPEC。
+- 对话头像：NPC 可写 `portrait`，经 `DIALOG_OPEN` payload 传给 UIScene（UIScene 显示由 Cursor 实现）。
+- 下一步：Cursor 做 SOLO-2；Claude 并行做 v0.3 核心。
 
 ### 2026-11-18 · Claude · 合并线路 A/B，转为单线开发
 - 合并 `cursor/line-B`（ART-04、ART-06、ART-07、FEAT-01，全部完成）和 `cursor/line-A`（ART-01、ART-02 完成；ART-03、CONTENT-02 未做）到 `claude/magical-mendel-e0aji0`，无冲突。

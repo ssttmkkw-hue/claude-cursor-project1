@@ -1,7 +1,7 @@
 # AGENTS.md —— 给 AI 协作者的开工须知
 
 本项目由 **Claude（核心框架）** 和 **Cursor / Cursor Agent（美术、内容、外围功能）** 协作开发。
-Cursor 开工前请按顺序读：本文件 → **`docs/cursor-lines/SOLO.md`（当前采用的单线开发说明）** → 你正在做的任务卡 → 任务卡里列出的文档。
+Cursor 开工前请按顺序读：本文件 → **`docs/cursor-lines/SOLO-2.md`（当前任务队列；规则沿用 `SOLO.md`）** → 你正在做的任务卡 → 任务卡里列出的文档。
 
 ## 分工与“所有权”
 

@@ -39,6 +39,17 @@
 | 3 | 朝上 up | 站立 | 走路循环 |
 
 manifest：`{ key: 'player', type: 'spritesheet', url: 'assets/characters/player.png', frameWidth: 32, frameHeight: 48 }`。
+### 动作帧（可选，v0.3 起支持）
+
+在行走 4 行下面继续加行，每个动作 4 行（down/left/right/up）× 4 帧，播放一次（16fps ≈ 0.25 秒）：
+
+| 行 | 内容 | 整图尺寸 |
+|---|---|---|
+| 4–7 | `attack` 攻击挥砍 | 128×384 |
+| 8–11 | `cast` 施法（技能 JSON 里写 `"anim": "cast"` 的技能使用） | 128×576 |
+
+释放技能时自动播放 `<key>_<动作>_<方向>`；没有对应行就跳过，不影响游戏。敌人同样适用。
+
 满足 16 帧时代码自动创建 `player_walk_down` 等动画；否则退化为单帧 + 程序化弹跳。NPC / 敌人同理（敌人帧尺寸用下表尺寸）。
 
 ## 纹理 key 清单

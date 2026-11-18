@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { DEPTH } from '@/config';
+import { EventBus, GameEvents } from '@/core/EventBus';
 import { ensureCharacterAnims, dirFromVector, type Dir } from '@/systems/CharacterAnimator';
 
 export type Team = 'player' | 'enemy';
@@ -25,6 +26,8 @@ export abstract class Combatant extends Phaser.Physics.Arcade.Sprite {
   protected shadow: Phaser.GameObjects.Image;
   private hasSheet: boolean;
   private bobT = 0;
+  /** 动作动画（攻击/施法）播放期间，移动动画不覆盖它 */
+  private actionUntil = 0;
 
   constructor(scene: Phaser.Scene, x: number, y: number, texture: string, stats: Stats) {
     super(scene, x, y, texture);
@@ -67,14 +70,29 @@ export abstract class Combatant extends Phaser.Physics.Arcade.Sprite {
     this.scene.time.delayedCall(80, () => this.active && this.clearTint());
     this.spawnDamageNumber(amount);
     this.onStatsChanged();
-    if (this.stats.hp <= 0) { this.dead = true; this.onDeath(); }
+    const killed = this.stats.hp <= 0;
+    EventBus.emit(GameEvents.COMBATANT_HIT, { team: this.team, amount, x: this.x, y: this.y, killed });
+    if (killed) { this.dead = true; this.onDeath(); }
     return true;
+  }
+
+  /**
+   * 播放一次性动作动画（如 attack / cast）。约定 key：`<纹理>_<动作>_<方向>`，由美术在
+   * spritesheet 里提供（见 docs/ART_SPEC.md「动作帧」）；不存在时静默跳过。
+   */
+  playAction(action: string) {
+    const key = `${this.texture.key}_${action}_${this.dir}`;
+    if (!this.scene.anims.exists(key)) return;
+    this.anims.play(key, true);
+    const anim = this.scene.anims.get(key);
+    this.actionUntil = this.scene.time.now + (anim.frames.length / anim.frameRate) * 1000;
   }
 
   /** 根据速度播放动画；无 spritesheet 时做程序化弹跳。子类每帧在设置速度后调用。 */
   protected animateMovement(vx: number, vy: number, delta: number) {
     const moving = vx !== 0 || vy !== 0;
     if (moving) { this.dir = dirFromVector(vx, vy, this.dir); }
+    if (this.scene.time.now < this.actionUntil) return;
     if (this.hasSheet) {
       this.anims.play(`${this.texture.key}_${moving ? 'walk' : 'idle'}_${this.dir}`, true);
     } else {

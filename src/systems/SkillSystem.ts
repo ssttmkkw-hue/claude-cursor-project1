@@ -3,6 +3,7 @@ import { DEPTH } from '@/config';
 import { Skills } from '@/data/registry';
 import type { SkillDef } from '@/data/types';
 import type { Combatant, Team } from '@/entities/Combatant';
+import { EventBus, GameEvents } from '@/core/EventBus';
 
 /**
  * 技能系统 —— 战斗的核心。
@@ -39,6 +40,8 @@ export function tryCast(world: CombatWorld, caster: Combatant, skillId: string, 
   caster.spendMp(skill.mp);
   caster.cooldowns.set(skillId, time + skill.cooldown);
   handler({ world, caster, skill, dir: caster.facing.clone().normalize() });
+  caster.playAction(skill.anim ?? 'attack');
+  EventBus.emit(GameEvents.SKILL_ACTION, { team: caster.team, skillId, x: caster.x, y: caster.y });
   return true;
 }
 

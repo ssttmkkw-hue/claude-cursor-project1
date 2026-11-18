@@ -1,6 +1,6 @@
 # Cursor 任务看板
 
-> 当前采用**单线开发**：按 [`docs/cursor-lines/SOLO.md`](../cursor-lines/SOLO.md) 的顺序做。（多线并行方案见 `docs/CURSOR_KICKOFF.md`，已暂停使用）
+> v0.2 的 15 张卡已全部完成。**当前任务队列见 [`docs/cursor-lines/SOLO-2.md`](../cursor-lines/SOLO-2.md)**。（多线并行方案见 `docs/CURSOR_KICKOFF.md`，已暂停使用）
 
 ## 工作流程
 

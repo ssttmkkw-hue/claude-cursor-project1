@@ -19,7 +19,11 @@ export interface MapExit {
   to: string; // 目标地图 id
   spawn: string; // 目标地图的出生点名
 }
-export interface MapNpc { id: string; x: number; y: number; sprite: string; name?: string; dialog: string[]; }
+export interface MapNpc {
+  id: string; x: number; y: number; sprite: string; name?: string; dialog: string[];
+  /** 可选：对话框头像纹理 key（建议 256×256，如 portrait_elder） */
+  portrait?: string;
+}
 export interface MapEnemy { type: string; x: number; y: number; }
 export interface MapPickup { id: string; x: number; y: number; skill?: string; heal?: number; }
 
@@ -60,6 +64,8 @@ export interface SkillDef {
   radius?: number; // aoe
   speed?: number; // projectile
   knockback?: number;
+  /** 可选：施放时播放的角色动作名，默认 'attack'。动画 key = `<纹理>_<动作>_<方向>`，不存在就不播 */
+  anim?: string;
   /** 自定义参数，给扩展技能类型使用 */
   params?: Record<string, number | string | boolean>;
 }
