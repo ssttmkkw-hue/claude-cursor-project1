@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- 横向木栅栏，左右可贴边拼接 -->
+  <rect x="2" y="6" width="5" height="24" rx="1.2" fill="#b98a5a" stroke="#3a4a52" stroke-width="1"/>
+  <rect x="25" y="6" width="5" height="24" rx="1.2" fill="#b98a5a" stroke="#3a4a52" stroke-width="1"/>
+  <rect x="0" y="12" width="32" height="4" rx="1" fill="#c9a06e" stroke="#3a4a52" stroke-width="1"/>
+  <rect x="0" y="21" width="32" height="4" rx="1" fill="#c9a06e" stroke="#3a4a52" stroke-width="1"/>
+  <rect x="1" y="13" width="30" height="1.5" fill="#e0c08a" opacity="0.55"/>
+  <rect x="1" y="22" width="30" height="1.5" fill="#e0c08a" opacity="0.55"/>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- 冰霜冲击环（中心锚点，会被放大到半径 96） -->
+  <circle cx="32" cy="32" r="27" fill="#e0f2ff" opacity="0.35"/>
+  <circle cx="32" cy="32" r="29" fill="none" stroke="#a8d8ff" stroke-width="4" opacity="0.95"/>
+  <circle cx="32" cy="32" r="18" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.55"/>
+  <g stroke="#d8efff" stroke-width="2" stroke-linecap="round" opacity="0.8">
+    <path d="M32 6 L32 14"/>
+    <path d="M32 50 L32 58"/>
+    <path d="M6 32 L14 32"/>
+    <path d="M50 32 L58 32"/>
+    <path d="M12 12 L17 17"/>
+    <path d="M47 47 L52 52"/>
+    <path d="M52 12 L47 17"/>
+    <path d="M17 47 L12 52"/>
+  </g>
+</svg>

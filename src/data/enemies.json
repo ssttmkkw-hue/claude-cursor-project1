@@ -1,0 +1,22 @@
+{
+  "slime": {
+    "name": "绿团子", "texture": "enemy_slime", "hp": 30, "speed": 70,
+    "contactDamage": 6, "aggroRange": 170, "skills": ["slime_tackle"], "exp": 5, "ai": "chaser"
+  },
+  "mushroom": {
+    "name": "孢子菇", "texture": "enemy_mushroom", "hp": 24, "speed": 45,
+    "contactDamage": 5, "aggroRange": 240, "skills": ["spore_shot"], "exp": 8, "ai": "ranged"
+  },
+  "bee": {
+    "name": "嗡嗡蜂", "texture": "enemy_bee", "hp": 18, "speed": 120,
+    "contactDamage": 5, "aggroRange": 200, "skills": ["bee_sting"], "exp": 6, "ai": "chaser", "bodyScale": 0.95
+  },
+  "golem": {
+    "name": "石头人", "texture": "enemy_golem", "hp": 70, "speed": 35,
+    "contactDamage": 10, "aggroRange": 150, "skills": ["golem_quake"], "exp": 14, "ai": "chaser", "bodyScale": 1.15
+  },
+  "flower": {
+    "name": "花妖", "texture": "enemy_flower", "hp": 28, "speed": 50,
+    "contactDamage": 4, "aggroRange": 260, "skills": ["petal_shot"], "exp": 9, "ai": "ranged"
+  }
+}

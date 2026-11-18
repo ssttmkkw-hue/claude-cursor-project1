@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <!-- 治疗光（中心锚点） -->
+  <circle cx="24" cy="24" r="22" fill="#ffe28a" opacity="0.35"/>
+  <circle cx="24" cy="24" r="14" fill="#fff6d0" opacity="0.45"/>
+  <rect x="21" y="10" width="6" height="28" rx="2" fill="#fff6d0"/>
+  <rect x="10" y="21" width="28" height="6" rx="2" fill="#fff6d0"/>
+  <circle cx="24" cy="24" r="3" fill="#ffffff" opacity="0.9"/>
+</svg>
