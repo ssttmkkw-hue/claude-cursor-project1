@@ -19,8 +19,21 @@ export type AssetEntry =
 export const ASSETS: AssetEntry[] = [
   // 多个 Agent 并行时：只在自己任务的分区里追加，避免合并冲突。
   // ===== ART-01 地面瓦片 =====
+  { key: 'tile_grass', type: 'svg', url: 'assets/tiles/grass.svg', width: 32, height: 32 },
+  { key: 'tile_grass_1', type: 'svg', url: 'assets/tiles/grass_1.svg', width: 32, height: 32 },
+  { key: 'tile_grass_2', type: 'svg', url: 'assets/tiles/grass_2.svg', width: 32, height: 32 },
+  { key: 'tile_flowers', type: 'svg', url: 'assets/tiles/flowers.svg', width: 32, height: 32 },
+  { key: 'tile_path', type: 'svg', url: 'assets/tiles/path.svg', width: 32, height: 32 },
+  { key: 'tile_sand', type: 'svg', url: 'assets/tiles/sand.svg', width: 32, height: 32 },
+  { key: 'tile_water', type: 'svg', url: 'assets/tiles/water.svg', width: 32, height: 32 },
+  { key: 'tile_bridge', type: 'svg', url: 'assets/tiles/bridge.svg', width: 32, height: 32 },
+  { key: 'tile_stone', type: 'svg', url: 'assets/tiles/stone.svg', width: 32, height: 32 },
 
   // ===== ART-02 自然物体 =====
+  { key: 'obj_tree', type: 'svg', url: 'assets/objects/tree.svg', width: 64, height: 80 },
+  { key: 'obj_pine', type: 'svg', url: 'assets/objects/pine.svg', width: 48, height: 80 },
+  { key: 'obj_bush', type: 'svg', url: 'assets/objects/bush.svg', width: 32, height: 32 },
+  { key: 'obj_rock', type: 'svg', url: 'assets/objects/rock.svg', width: 32, height: 32 },
 
   // ===== ART-03 村庄建筑 =====
 

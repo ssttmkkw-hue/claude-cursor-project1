@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="#7ccbe8"/>
+  <!-- 一整周期的波纹，左右端点同高，可以左右无缝拼接 -->
+  <path d="M0 11 C8 7.2 8 14.8 16 11 C24 7.2 24 14.8 32 11" fill="none" stroke="#e7f7fc" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M0 22 C8 19 8 25 16 22 C24 19 24 25 32 22" fill="none" stroke="#bfeaf6" stroke-width="1.35" stroke-linecap="round" opacity="0.95"/>
+  <g fill="#f4fcff" opacity="0.8">
+    <circle cx="10" cy="16.5" r="0.45"/>
+    <circle cx="23" cy="6.5" r="0.4"/>
+  </g>
+</svg>
