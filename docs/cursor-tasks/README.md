@@ -1,14 +1,16 @@
 # Cursor 任务看板
 
+> 怎么开工、怎么并行：见 [`docs/CURSOR_KICKOFF.md`](../CURSOR_KICKOFF.md)
+
 ## 工作流程
 
 1. 读 [`/AGENTS.md`](../../AGENTS.md)（规则与文件所有权）
-2. 在下表挑一个 **待领取** 且依赖已完成的任务，把状态改为 `进行中 (agent名/日期)`
+2. 按 [`docs/CURSOR_KICKOFF.md`](../CURSOR_KICKOFF.md) 的分波计划领任务，从 `main` 拉分支 `cursor/<任务编号>`
 3. 按任务卡做；任务卡里的“验收标准”全部满足
 4. `npm run build` + `npm run validate` 通过
-5. 状态改为 `已完成`，在 [`docs/HANDOFF.md`](../HANDOFF.md) 追加记录，提交（信息以任务编号开头）
+5. 新建 `docs/handoff/<任务编号>.md` 写交接记录，提交（信息以任务编号开头），推送分支 / 开 PR
 
-多个 Cursor Agent 并行时：**每个 agent 只领一张卡**，美术卡之间互不冲突可以并行；改同一个文件（如 `manifest.ts`）时只追加行，不重排。
+多个 Cursor Agent 并行时：**每个 agent 只领一张卡、只在自己的分支上工作**。下面的状态表由负责合并的人统一更新，并行分支里不要改。
 
 ## 看板
 

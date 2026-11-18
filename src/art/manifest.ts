@@ -17,5 +17,26 @@ export type AssetEntry =
   | { key: string; type: 'audio'; url: string | string[] };
 
 export const ASSETS: AssetEntry[] = [
-  // ↓↓↓ Cursor：在此追加资源 ↓↓↓
+  // 多个 Agent 并行时：只在自己任务的分区里追加，避免合并冲突。
+  // ===== ART-01 地面瓦片 =====
+
+  // ===== ART-02 自然物体 =====
+
+  // ===== ART-03 村庄建筑 =====
+
+  // ===== ART-04 主角 =====
+
+  // ===== ART-05 NPC =====
+
+  // ===== ART-06 敌人 =====
+
+  // ===== ART-07 技能特效/图标 =====
+
+  // ===== ART-08 UI/字体 =====
+
+  // ===== FEAT-02 音频 =====
+
+  // ===== FEAT-04 标题画面 =====
+
+  // ===== CONTENT-* 新内容用到的资源 =====
 ];
