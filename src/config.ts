@@ -21,6 +21,7 @@ export const KEYS = {
   dash: ['SPACE'],
   interact: ['E'],
   skills: ['J', 'K', 'L', 'I'],
+  menu: ['TAB'],
 } as const;
 
 export const PLAYER_TUNING = {
