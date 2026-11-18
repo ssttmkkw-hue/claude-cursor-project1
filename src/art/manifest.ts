@@ -30,6 +30,10 @@ export const ASSETS: AssetEntry[] = [
   { key: 'tile_stone', type: 'svg', url: 'assets/tiles/stone.svg', width: 32, height: 32 },
 
   // ===== ART-02 自然物体 =====
+  { key: 'obj_tree', type: 'svg', url: 'assets/objects/tree.svg', width: 64, height: 80 },
+  { key: 'obj_pine', type: 'svg', url: 'assets/objects/pine.svg', width: 48, height: 80 },
+  { key: 'obj_bush', type: 'svg', url: 'assets/objects/bush.svg', width: 32, height: 32 },
+  { key: 'obj_rock', type: 'svg', url: 'assets/objects/rock.svg', width: 32, height: 32 },
 
   // ===== ART-03 村庄建筑 =====
 
