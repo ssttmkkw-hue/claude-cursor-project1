@@ -31,7 +31,10 @@ export class SkillMenuScene extends Phaser.Scene {
   }
 
   create() {
+    this.cameras.main.setBackgroundColor('rgba(0,0,0,0)');
     this.root = this.add.container(0, 0).setVisible(false).setDepth(10000);
+    // 关闭时隐藏整个 Scene，避免顶层 Scene 清屏盖住 World
+    this.scene.setVisible(false);
     this.rebuild();
 
     const kb = this.input.keyboard!;
@@ -73,6 +76,7 @@ export class SkillMenuScene extends Phaser.Scene {
     this.pending = GameState.data.learned[0] ?? null;
     this.rebuild();
     this.root.setVisible(true);
+    this.scene.setVisible(true);
     if (this.scene.isActive('World') && !this.scene.isPaused('World')) {
       this.scene.pause('World');
     }
@@ -81,6 +85,7 @@ export class SkillMenuScene extends Phaser.Scene {
   private closeMenu() {
     this.open = false;
     this.root.setVisible(false);
+    this.scene.setVisible(false);
     GameState.save();
     if (this.scene.isPaused('World')) this.scene.resume('World');
   }
