@@ -1,0 +1,10 @@
+{
+  "slime": {
+    "name": "绿团子", "texture": "enemy_slime", "hp": 30, "speed": 70,
+    "contactDamage": 6, "aggroRange": 170, "skills": ["slime_tackle"], "exp": 5, "ai": "chaser"
+  },
+  "mushroom": {
+    "name": "孢子菇", "texture": "enemy_mushroom", "hp": 24, "speed": 45,
+    "contactDamage": 5, "aggroRange": 240, "skills": ["spore_shot"], "exp": 8, "ai": "ranged"
+  }
+}
