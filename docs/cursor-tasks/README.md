@@ -28,7 +28,7 @@
 | [FEAT-02](FEAT-02-audio.md) | 音频系统（BGM/音效） | 功能 | — | 待领取 |
 | [FEAT-03](FEAT-03-gamepad.md) | 手柄支持 | 功能 | — | 待领取 |
 | [FEAT-04](FEAT-04-title-screen.md) | 标题画面 / 新游戏 / 继续 | 功能 | — | 已完成 |
-| [CONTENT-01](CONTENT-01-beach-map.md) | 海边地图 `beach` | 内容 | ART-01 建议先做 | 待领取 |
+| [CONTENT-01](CONTENT-01-beach-map.md) | 海边地图 `beach` | 内容 | ART-01 建议先做 | 已完成 |
 | [CONTENT-02](CONTENT-02-lake-map.md) | 湖畔地图 `lake` | 内容 | — | 已完成 |
 | [CONTENT-03](CONTENT-03-enemies-skills.md) | 新敌人 ×3、新技能 ×3（仅用已有类型） | 内容 | — | 待领取 |
 

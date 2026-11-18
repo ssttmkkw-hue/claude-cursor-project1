@@ -24,3 +24,8 @@
 - 做了什么：`src/data/maps/lake.json`（64×44，中央湖+环湖路+木桥小岛，`heal` 宝珠）；`tools/gen-lake.mjs`；tint `#e0f0ff`；与森林双向连通。
 - 遗留：无。
 - 请求 Claude：无
+
+## CONTENT-01 · 海边地图
+- 做了什么：`src/data/maps/beach.json`（60×36，北入口/沙滩/大海）；渔夫 NPC；东出口预留 `cave`；`tools/gen-beach.mjs`；与村庄双向连通。
+- 遗留：可选贝壳/棕榈未做；洞穴未开放。
+- 请求 Claude：无
