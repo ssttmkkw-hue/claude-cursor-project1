@@ -45,6 +45,8 @@ export const ASSETS: AssetEntry[] = [
   { key: 'player', type: 'spritesheet', url: 'assets/characters/player.png', frameWidth: 32, frameHeight: 48 },
 
   // ===== ART-05 NPC =====
+  { key: 'npc_elder', type: 'svg', url: 'assets/characters/npc_elder.svg', width: 32, height: 48 },
+  { key: 'npc_girl', type: 'svg', url: 'assets/characters/npc_girl.svg', width: 32, height: 48 },
 
   // ===== ART-06 敌人 =====
   { key: 'enemy_slime', type: 'svg', url: 'assets/enemies/slime.svg', width: 32, height: 28 },
